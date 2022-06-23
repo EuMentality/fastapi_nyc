@@ -28,7 +28,7 @@ async def trip_duration(trip: TripConfigure):
     trip_params = pd.DataFrame({key: [value] for key, value in dict(trip).items()})
     trip_params = add_features(trip_params, purpose='predict')
     prediction = make_prediction(trip_params)
-    prediction = {'prediction': prediction + 10000}
+    prediction = {'prediction': prediction}
     return prediction
     
 
