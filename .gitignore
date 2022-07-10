@@ -2,7 +2,5 @@ venv
 .DS_Store
 src/.DS_Store
 src/__pycache__
-src/features/__pycache__
-src/model/__pycache__
 cli_commands.txt
 __pycache__

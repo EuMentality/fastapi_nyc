@@ -1,13 +1,10 @@
+import pandas as pd
 from fastapi import FastAPI
 from pydantic import BaseModel
-from src.model import make_prediction
-from src.features import add_features
-# trash
-import pandas as pd
-import numpy as np
+from src import add_features, make_prediction
+
 
 app = FastAPI()
-
 
 class TripConfigure(BaseModel):
     """
@@ -19,14 +16,12 @@ class TripConfigure(BaseModel):
     dropoff_longitude: float
     pickup_datetime: str
     passenger_count: int
-    vendor_id: int
-    store_and_fwd_flag: str
 
 
 @app.post('/predict')
 async def trip_duration(trip: TripConfigure):
     trip_params = pd.DataFrame({key: [value] for key, value in dict(trip).items()})
-    trip_params = add_features(trip_params, purpose='predict')
+    trip_params = add_features(trip_params, path_kmeans='model/kmeans.pkl', purpose='predict')
     prediction = make_prediction(trip_params)
     prediction = {'prediction': prediction}
     return prediction
