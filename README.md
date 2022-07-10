@@ -1,4 +1,4 @@
-Backend Heroku Organization 
+Backend [Heroku](https://taxi-nyc-fastapi.herokuapp.com/docs) Organization 
 ===============
     ├── model
     │   ├── catboost.bin         <- Trained Catboost model.
@@ -6,7 +6,7 @@ Backend Heroku Organization
     │
     ├── src
     │   ├── __init__.py          <- Make src a Python module.
-    │   ├── add_features.py      <- Add features for tuning or predicting.
+    │   ├── add_features.py      <- Add features for predicting.
     │   └── make_prediction.py   <- Predict trip duration: frontend request.
     │                     
     ├── README.md                <- Backend Description.
