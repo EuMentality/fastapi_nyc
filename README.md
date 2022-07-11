@@ -8,6 +8,8 @@ Backend [Heroku](https://taxi-nyc-fastapi.herokuapp.com/docs) Organization
     │   ├── __init__.py          <- Make src a Python module.
     │   ├── add_features.py      <- Add features for predicting.
     │   └── make_prediction.py   <- Predict trip duration: frontend request.
+    │
+    │── .gitignore               <- gitignore configuration.
     │                     
     ├── README.md                <- Backend Description.
     │
